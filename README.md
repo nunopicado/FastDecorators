@@ -45,3 +45,9 @@ This class should conform to traditional *decorators*, implementing the *interfa
 * Its Origin field should be *protected*, rather than *private*.
 
 That's it. Every *decorator* will then descend from this class, and override the methods it needs to decorate. No other method need to be touched, and the base class will do all the wrapping. If needed, the constructor could be overloaded to allow other parameters needed by the *decorator*, but it should always, like every *decorator*, have its Origin field.
+
+# The example:
+This example was created in **Object Pascal**, but it applies to almost every language.
+* On the file **FooIntf.pas** you'll find the *interface* declaration, and the "*Decorable Class*".
+* On the file **FooImpl.pas** you'll find the *interface* implementation class, and some decorators to simulate its usage.
+* The files **"FastDecoratorTest.*"** are a simple Delphi project to test this technique.
