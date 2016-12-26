@@ -1,7 +1,7 @@
 # FastDecorators
 A technique to create *decorators* without having to wrap all methods.
 
-# Why
+# Why?
 *Decorators* are a great way to add new features to an existing class, or change existing behaviour. In my opinion, better than *inheritance*, because each feature is isolated from the main class and will never ever never change its behaviour.
 There's one problem with *decorators*, though, because if you need to decorate one single method from the original implementation, you still have to create *wrapper methods* for all the other methods, just passing the messages from the decorated object to the original object. And this can be tedious.
 
@@ -49,5 +49,9 @@ That's it. Every *decorator* will then descend from this class, and override the
 # The example:
 This example was created in **Object Pascal**, but it applies to almost every language.
 * On the file **FooIntf.pas** you'll find the *interface* declaration, and the "*Decorable Class*".
-* On the file **FooImpl.pas** you'll find the *interface* implementation class, and some decorators to simulate its usage.
+* On the file **FooImpl.pas** you'll find the *interface* implementation class, and some *decorators* to simulate its usage.
 * The files **"FastDecoratorTest.*"** are a simple Delphi project to test this technique.
+
+# Conclusion
+This is definitely not a consensual technique, nor does it mean to be. If you don't feel at ease with using *protected fields*, don't. You don't need this to create *decorators*. This only allows saving a small amount of work in some cases.
+If, however, *protected fields* aren't a problem as long as they're used in a controlled and predictable way, then why not? 
