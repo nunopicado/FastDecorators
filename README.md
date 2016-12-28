@@ -37,7 +37,7 @@ Hell no! If you will only have one *decorator* for your *interface*, why would y
 **Use it only when its advantages outweigh its disadvantages**. That's the whole point of everything in life, isn't it?
 
 # Usage:
-For every *interface* you need to create *decorators* (and are not auto excluded by the criteria stated in the **So does this mean we should always use this?** section, one class should be created.
+For every *interface* you need to create *decorators* (and are not auto excluded by the criteria stated in the **So does this mean we should always use this?** section) one class should be created.
 This class should conform to traditional *decorators*, implementing the *interface* it aims to decorate:
 * It should accept in its constructor an origin object that implements the same *interface*.
 * It should also create wrappers for all *interface* methods.
