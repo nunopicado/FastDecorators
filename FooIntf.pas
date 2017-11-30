@@ -3,21 +3,21 @@ unit FooIntf;
 interface
 
 type
-    IFoo = Interface
-      function FooMethod1: IFoo;
-      function FooMethod2(SomeParam: String): IFoo;
-      procedure FooMethod3;
-    End;
+  IFoo = interface
+    function FooMethod1: IFoo;
+    function FooMethod2(SomeParam: string): IFoo;
+    procedure FooMethod3;
+  end;
 
-    TDecorableFoo = Class(TInterfacedObject, IFoo)
-    protected
-      FOrigin: IFoo;
-    public
-      constructor Create(Origin: IFoo);
-      function FooMethod1: IFoo; Virtual;
-      function FooMethod2(SomeParam: String): IFoo; Virtual;
-      procedure FooMethod3; Virtual;
-    End;
+  TDecorableFoo = class(TInterfacedObject, IFoo)
+  protected
+    FOrigin: IFoo;
+  public
+    constructor Create(Origin: IFoo);
+    function FooMethod1: IFoo; virtual;
+    function FooMethod2(SomeParam: string): IFoo; virtual;
+    procedure FooMethod3; virtual;
+  end;
 
 implementation
 
@@ -25,24 +25,24 @@ implementation
 
 constructor TDecorableFoo.Create(Origin: IFoo);
 begin
-     FOrigin := Origin;
+  FOrigin := Origin;
 end;
 
 function TDecorableFoo.FooMethod1: IFoo;
 begin
-     Result := Self;
-     FOrigin.FooMethod1;
+  Result := Self;
+  FOrigin.FooMethod1;
 end;
 
-function TDecorableFoo.FooMethod2(SomeParam: String): IFoo;
+function TDecorableFoo.FooMethod2(SomeParam: string): IFoo;
 begin
-     Result := Self;
-     FOrigin.FooMethod2(SomeParam);
+  Result := Self;
+  FOrigin.FooMethod2(SomeParam);
 end;
 
 procedure TDecorableFoo.FooMethod3;
 begin
-     FOrigin.FooMethod3;
+  FOrigin.FooMethod3;
 end;
 
 end.

@@ -7,27 +7,27 @@ uses
   ;
 
 type
-    TFoo = Class(TInterfacedObject, IFoo)
-    public
-      function FooMethod1: IFoo;
-      function FooMethod2(SomeParam: String): IFoo;
-      procedure FooMethod3;
-    End;
+  TFoo = class(TInterfacedObject, IFoo)
+  public
+    function FooMethod1: IFoo;
+    function FooMethod2(SomeParam: string): IFoo;
+    procedure FooMethod3;
+  end;
 
-    TSpecialFoo = Class(TDecorableFoo, Ifoo)
-    public
-      procedure FooMethod3; Override;
-    End;
+  TSpecialFoo = class(TDecorableFoo, Ifoo)
+  public
+    procedure FooMethod3; override;
+  end;
 
-    TVeryFoo = Class(TDecorableFoo, Ifoo)
-    public
-      procedure FooMethod3; Override;
-    End;
+  TVeryFoo = class(TDecorableFoo, Ifoo)
+  public
+    procedure FooMethod3; override;
+  end;
 
-    TReallyFoo = Class(TDecorableFoo, Ifoo)
-    public
-      procedure FooMethod3; Override;
-    End;
+  TReallyFoo = class(TDecorableFoo, Ifoo)
+  public
+    procedure FooMethod3; override;
+  end;
 
 implementation
 
@@ -39,43 +39,43 @@ uses
 
 function TFoo.FooMethod1: IFoo;
 begin
-     Result := Self;
-     WriteLn('Foo Method 1');
+  Result := Self;
+  WriteLn('Foo Method 1');
 end;
 
 function TFoo.FooMethod2(SomeParam: String): IFoo;
 begin
-     Result := Self;
-     WriteLn(Format('Foo Method 2 using %s', [SomeParam]));
+  Result := Self;
+  WriteLn(Format('Foo Method 2 using %s', [SomeParam]));
 end;
 
 procedure TFoo.FooMethod3;
 begin
-     WriteLn('Foo Method 3');
+  WriteLn('Foo Method 3');
 end;
 
 { TSpecialFoo }
 
 procedure TSpecialFoo.FooMethod3;
 begin
-     Write('Special ');
-     inherited;
+  Write('Special ');
+  inherited;
 end;
 
 { TVeryFoo }
 
 procedure TVeryFoo.FooMethod3;
 begin
-     Write('Very ');
-     inherited;
+  Write('Very ');
+  inherited;
 end;
 
 { TReallyFoo }
 
 procedure TReallyFoo.FooMethod3;
 begin
-     Write('Really ');
-     inherited;
+  Write('Really ');
+  inherited;
 end;
 
 end.
