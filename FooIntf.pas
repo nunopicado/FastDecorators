@@ -30,12 +30,14 @@ end;
 
 function TDecorableFoo.FooMethod1: IFoo;
 begin
-     Result := FOrigin.FooMethod1;
+     Result := Self;
+     FOrigin.FooMethod1;
 end;
 
 function TDecorableFoo.FooMethod2(SomeParam: String): IFoo;
 begin
-     Result := FOrigin.FooMethod2(SomeParam);
+     Result := Self;
+     FOrigin.FooMethod2(SomeParam);
 end;
 
 procedure TDecorableFoo.FooMethod3;
