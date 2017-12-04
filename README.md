@@ -15,8 +15,9 @@ It consists in creating one *decorator* with wrappers for all the methods, and l
 Then, every *decorator* will descend from this class and override the methods they actually need to implement/change.
 
 # Wait, what? Protected? No way!!!
-Yeah, I know what you mean. *Protected fields* are like *global variables* in the scope of the class hierarchy. And that's bad, right?
-Yeah, I actually think it is bad... Most of the times. Like every other feature, *protected fields* can be used to create really destructive stuff, so you should definitely avoid them. But like every other feature, there's a time and a place. I do believe that in this particular case, the advantages might, sometimes, outweigh the costs.
+~~Yeah, I know what you mean. *Protected fields* are like *global variables* in the scope of the class hierarchy. And that's bad, right?~~
+~~Yeah, I actually think it is bad... Most of the times. Like every other feature, *protected fields* can be used to create really destructive stuff, so you should definitely avoid them. But like every other feature, there's a time and a place. I do believe that in this particular case, the advantages might, sometimes, outweigh the costs.~~
+As noted by [@mdbs99](https://github.com/mdbs99) on issue [#1](https://github.com/nunopicado/FastDecorators/issues/1), **FOrigin** doesn't need to be **protected**, rather it can be just a **private** field. Calls to the original method can be made through the `inherited` keyword in the methods, or through a call to the original **constructor Create** when appropriate.
 
 # Let's think this through
 There are some common dangers to the use of *protected fields*:

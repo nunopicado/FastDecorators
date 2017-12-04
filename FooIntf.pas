@@ -10,7 +10,7 @@ type
   end;
 
   TDecorableFoo = class(TInterfacedObject, IFoo)
-  protected
+  private
     FOrigin: IFoo;
   public
     constructor Create(Origin: IFoo);
